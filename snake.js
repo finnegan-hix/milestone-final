@@ -45,3 +45,15 @@ function resume(){
         displayGameOver();
     }
 };
+function clear(){
+    ctx.fillStyle = boardBackground;
+      ctx.fillRect(0, 0, width, gameHeight);
+  };
+  function createHealth(){
+      function randomFood(min, max){
+          const randNum = Math.round((Math.random() * (max - min) + min) / size) * size;
+          return randNum;
+      }
+      foodX = randomFood(0, width - size);
+      foodY = randomFood(0, width - size);
+  };
