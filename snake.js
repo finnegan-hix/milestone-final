@@ -135,3 +135,23 @@ function moveSnake(){
             }
         }
     };
+    function displayGameOver(){
+        ctx.font = "100px";
+        ctx.fillStyle = "white";
+        ctx.textAlign = "center";
+        ctx.fillText("GAME OVER", width / 2, gameHeight / 2);
+        running = false;
+    };
+    function resetGame(){
+        score = 0;
+        horizontalMove = size;
+        verticalMove = 0;
+        snake = [
+            {x:size * 4, y:0},
+            {x:size * 3, y:0},
+            {x:size * 2, y:0},
+            {x:size, y:0},
+            {x:0, y:0}
+        ];
+        gameStart();
+    };
