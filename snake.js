@@ -1,0 +1,12 @@
+const board = document.querySelector("#board");
+const ctx = board.getContext("2d");
+const scoreText = document.querySelector("#scoreText");
+const resetBtn = document.querySelector("#resetBtn");
+const width = board.width;
+const gameHeight = board.height;
+const boardBackground = "black";
+const snakeColor = "green";
+const snakeBorder = "black";
+const healthColor = " white";
+const size = 40;
+let running = false;
