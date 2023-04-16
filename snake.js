@@ -57,3 +57,21 @@ function clear(){
       foodX = randomFood(0, width - size);
       foodY = randomFood(0, width - size);
   };
+  function drawFood(){
+    ctx.fillStyle = healthColor;
+    ctx.fillRect(foodX, foodY, size, size);
+};
+function moveSnake(){
+    const head = {x: snake[0].x + horizontalMove,
+                  y: snake[0].y + verticalMove};
+    
+    snake.unshift(head);
+  
+    if(snake[0].x == foodX && snake[0].y == foodY){
+        score+=1;
+        scoreText.textContent = score;
+        createHealth();
+    }
+    else{
+        snake.pop();
+    }};
