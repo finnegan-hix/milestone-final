@@ -83,3 +83,34 @@ function moveSnake(){
             ctx.strokeRect(snakePart.x, snakePart.y, size, size);
         })
     };
+    function changeDirection(event){
+        const keyPressed = event.keyCode;
+        const LEFT = 37;
+        const UP = 38;
+        const RIGHT = 39;
+        const DOWN = 40;
+    
+        const goingUp = (verticalMove == -size);
+        const goingDown = (verticalMove == size);
+        const goingRight = (horizontalMove == size);
+        const goingLeft = (horizontalMove == -size);
+    
+        switch(true){
+            case(keyPressed == LEFT && !goingRight):
+                horizontalMove = -size;
+                verticalMove = 0;
+                break;
+            case(keyPressed == UP && !goingDown):
+                horizontalMove = 0;
+                verticalMove = -size;
+                break;
+            case(keyPressed == RIGHT && !goingLeft):
+                horizontalMove = size;
+                verticalMove = 0;
+                break;
+            case(keyPressed == DOWN && !goingUp):
+                horizontalMove = 0;
+                verticalMove = size;
+                break;
+        }
+    };
