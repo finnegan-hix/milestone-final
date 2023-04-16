@@ -75,3 +75,11 @@ function moveSnake(){
     else{
         snake.pop();
     }};
+    function drawSnake(){
+        ctx.fillStyle = snakeColor;
+        ctx.strokeStyle = snakeBorder;
+        snake.forEach(snakePart => {
+            ctx.fillRect(snakePart.x, snakePart.y, size, size);
+            ctx.strokeRect(snakePart.x, snakePart.y, size, size);
+        })
+    };
